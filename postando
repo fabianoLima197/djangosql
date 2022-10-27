@@ -1,0 +1,56 @@
+1.settings coloca o debug false
+2.libera os middlware com '#'
+3.deixar comentado o email-backend
+4.quando for postar deve colocar devolta para o sql
+
+5. import dj_database_url  isso na settings...
+
+#usando postgreeSQL com o heroku
+DATABASES = {
+    'default': dj_database_url.config
+
+vamos ter q instalar as bibliotecas => pip install dj_database_url psycopg2.binary
+#pip freeze > requirements.txt
+#git init
+#git status
+#git add .
+#git comit -m 'o comentario do comit kkkk'
+
+no heroku
+ele deletou o q tinha ... sei la ne
+
+#heroku login
+loga no momento
+
+verificar a versao do python com o #python -v
+cria um arquivo na raiz com o nome runtime.txt e dentro colo a versao do python q ta instalada
+cria um outro arquivo na raiz do projeto com o nome Procfile dentro cola: web: gunicorn nomedoprojeto.wsgi --log-file -
+
+ve se tem coisa p adicionar com o git status e o q tiver faz outro comit
+
+#heroku create nomedaaplicacao-gu --buildpack heroku/python
+se o nome ja existir nao vai criar
+
+#gitpush heroku master ai o projeto e postado
+#heroku run python manage.py migrate => vai criar os bancos de ddados para a aplicação
+#heroku run python manage.py createsuperuser ...ja sabe né
+
+#pip install dj-static
+
+#pip uninstall whitenoise
+
+#pip freeze > requirements.txt
+
+na wsgi importar a biblioteca from df-satatic import Cling, MediaCling
+application = Cling(MediaCling(get_wsgi_application()))
+
+#git add .
+# git commit -m "comentario"
+# git push heroku master
+# heroku pg:reset DATABASE_URL
+# heroku run python manage.py migrate  => recriando as tabelas creio q vazias
+# heroku run python manage.py createsuperuser => o super usuaroio por q foi tudo apagado...
+# heroku logs --tail
+# web: gunicorn nomedaaplicacao.wsgi --logi-file -
+ se der problema ... refazer do comit ate a postagem
+
