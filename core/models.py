@@ -1,16 +1,18 @@
 from django.db import models
-from stdimage.models import StdImageField
+from stdimage.models import *
+from _datetime  import datetime
 
 #SIGNALS
 from django.db.models import signals
 from django.template.defaultfilters import slugify
+import datetime
 
 # Create your models here.
 
-class base(models.Model):
-    criado = models.DateField('Dada de Criação', auto_now=True)
-    modificado = models.DateField('Data de atualização', auto_now=True)
-    ativo = models.DateField('Ativo', default=True)
+class Base(models.Model):
+    criado = models.DateField('Dada de Criação', auto_now_add=True)
+    modificado = models.DateField('Data de Atualização', auto_now=True)
+    ativo = models.BooleanField('Ativo?', default=True)
 
     class Meta:
         abstract = True
